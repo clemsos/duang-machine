@@ -1,2 +1,3 @@
-# theMemeMachine-
-The Meme Machine workshop : introduction to Javascript
+# Duang Machine
+
+Duang Machine : introduction workshop to Javascript
