@@ -35,37 +35,62 @@
       <h1>The Infernal Meme Machine</h1>
       <div class="big">
         <img class="gif-target" src="" alt="">
-        <svg width="200" height="200"></svg>
+        <div id="words"></div>
       </div>
       <div class="small">
-        <input type="text" name="talk" id="talkbox">
+        <form action="" id="talk">
+          <input type="text" name="talk" id="talkbox">
+          <input type="submit" value="Say it!" id="talk-btn">
+        </form>
       </div>
     </div>
 
     <script>
       console.log(d3.version); // check if D3 is loaded
 
-      // create SVG and text
-      var svg = d3.select("svg");
+      var texts;
 
-      var text = d3.select("svg")
-        .append("text")
-        .attr("fill", "red")
-        .attr("x", 15)
-        .attr("y", 25)
-        .text("coucou")
+      // create SVG
+      var svg = d3.select("#words")
+        .append("svg")
+        .attr("width", 200)
+        .attr("height", 200);
 
-      d3.select("#talkbox").on("input", function() {
-        text.text(this.value)
+      function update() {
+        texts = svg.selectAll("text")
+          .data(words)
+
+        texts.enter()
+          .append("text")
+          .attr("fill", "red")
+          .attr("x", function(d){ return getRandomInt(0,15) + 15})
+          .attr("y", function(d,i){ return 15+i*15 })
+
+        texts.text(function(d) { console.log(d);return d });
+        texts.exit().remove();
+      }
+
+      // data
+      var words = ["coucou","salut"];
+      update()
+
+      // click on the button
+      d3.select("#talk").on("submit", function() {
+        d3.event.preventDefault() // prevent page refresh
+        var textValue = d3.select("#talkbox").property("value");
+        words.push(textValue);
+        console.log(words);
+        update()
       });
 
       // moving text
       var interval = 10; // interval (ms)
-      var x = 30;
       setInterval(function(){
-        x = x+1;
-        if(x>svg.attr("width")) x= 0;
-        text.attr("x",x)
+        texts.attr("x",function(d){
+          var x = Number(d3.select(this).attr("x"));
+          if( x > svg.attr("width")) return 0;
+          else return x+1;
+        })
       }, interval)
 
       // get random Integral Number
