@@ -12,6 +12,9 @@ Source : [bilibili.com](http://www.bilibili.com/video/av2023391/)
 
 ## Objectives
 
-* Write a small web app on a single page
-* Use a Web API ([Giphy.com](https://github.com/Giphy/GiphyAPI))
-* Use [d3.js](http://d3js.org) to fetch data, draw SVG text and bind events
+* Html : write a small web app on a single page
+* Css : position and superpose elements
+* Js : learn basic notions - Number, Arrays, Objects, functions, callbacks
+* Js : apprehend some native functions : ```Math.random()``` and ```setInterval```
+* SVG : use [d3.js](http://d3js.org) to draw text and bind events
+* Data : Fetch JSON and use a Web API ([Giphy.com](https://github.com/Giphy/GiphyAPI))
