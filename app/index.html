@@ -15,7 +15,7 @@
 
       .small {
         width: 20%;
-        float: left;
+        float: right;
       }
 
       svg, img {
@@ -42,6 +42,9 @@
           <input type="text" name="talk" id="talkbox">
           <input type="submit" value="Say it!" id="talk-btn">
         </form>
+        <ul id="chat">
+
+        </ul>
       </div>
     </div>
 
@@ -83,8 +86,16 @@
         if (textValue != "") { // prevent empty value
           words.push(textValue); // add words to our list
           update(); // display the whole SVG to show new word
+          d3.select("#talkbox").property("value", "") // clean box
+
+          // log chat
+          d3.select("#chat")
+            .append("li")
+            .text(new Date + ":" +textValue)
+
         }
-        d3.select("#talkbox").property("value", "") // clean box
+
+
       });
 
       // moving text
