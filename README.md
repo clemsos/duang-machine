@@ -8,3 +8,10 @@ From [Wikipdeia ](https://en.wikipedia.org/wiki/Duang)
 
 ![Duang](DuangMachine.png)
 Source : [bilibili.com](http://www.bilibili.com/video/av2023391/)
+
+
+## Objectives
+
+* Write a small web app on a single page
+* Use a Web API ([Giphy.com](https://github.com/Giphy/GiphyAPI))
+* Use [d3.js](http://d3js.org) to fetch data, draw SVG text and bind events
