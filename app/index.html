@@ -68,6 +68,8 @@
 
         texts.text(function(d) { console.log(d);return d });
         texts.exit().remove();
+
+
       }
 
       // data
@@ -78,9 +80,11 @@
       d3.select("#talk").on("submit", function() {
         d3.event.preventDefault() // prevent page refresh
         var textValue = d3.select("#talkbox").property("value");
-        words.push(textValue);
-        console.log(words);
-        update()
+        if (textValue != "") { // prevent empty value
+          words.push(textValue); // add words to our list
+          update(); // display the whole SVG to show new word
+        }
+        d3.select("#talkbox").property("value", "") // clean box
       });
 
       // moving text
