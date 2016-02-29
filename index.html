@@ -90,7 +90,11 @@
         .attr("r", 10)
         .attr("cx", 20)
         .attr("cy", 20)
-        .attr("fill", color);
+        .attr("fill", color)
+        .on("click", function(d, i){
+          var c = d3.select(this).attr("fill")
+          console.log(c);
+        })
 
       // data
       var words = ["coucou","salut"];
