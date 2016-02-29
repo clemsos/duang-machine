@@ -19,12 +19,13 @@
         float: right;
       }
 
-      svg, img {
+      #visual svg, #visual img {
         position: absolute;
         top: 100;
         left:100;
       }
-      svg {
+
+      #words svg {
         border: 1px solid #CCC;
       }
     </style>
@@ -35,11 +36,12 @@
     <div class="main container">
       <h1>The Infernal Meme Machine</h1>
       <div class="row">
-        <div class="big  six columns">
+        <div id="visual" class="big six columns">
           <img class="gif-target" src="" alt="">
           <div id="words"></div>
         </div>
         <div class="small six columns">
+          <div id="colorPicker"></div>
           <form action="" id="talk">
             <input type="text" name="talk" id="talkbox">
             <input type="submit" value="Say it!" id="talk-btn">
@@ -77,9 +79,24 @@
 
       }
 
+      var color = "green";
+
+      // a color selector
+      var colorPicker = d3.select("#colorPicker")
+        .append("svg")
+
+      var colorPickerCircle = colorPicker
+        .append("circle")
+        .attr("r", 10)
+        .attr("cx", 20)
+        .attr("cy", 20)
+        .attr("fill", color);
+
       // data
       var words = ["coucou","salut"];
       update()
+
+
 
       // click on the button
       d3.select("#talk").on("submit", function() {
