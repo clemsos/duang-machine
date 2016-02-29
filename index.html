@@ -58,7 +58,11 @@
     <script>
       console.log(d3.version); // check if D3 is loaded
 
+      // value to store our texts
       var texts;
+
+      // default color of the text
+      var color = "green";
 
       // create SVG
       var svg = d3.select("#words")
@@ -72,7 +76,7 @@
 
         texts.enter()
           .append("text")
-          .attr("fill", "red")
+          .attr("fill", color)
           .attr("x", function(d){ return getRandomInt(0,15) + 15})
           .attr("y", function(d,i){ return 15+i*15 })
 
@@ -81,7 +85,8 @@
 
       }
 
-      var color = "green";
+
+
       // a color selector
       var colorPicker = d3.select("#colorPicker")
         .append("svg")
@@ -108,13 +113,12 @@
       var words = ["coucou","salut"];
       update()
 
-
-
       // click on the button
       d3.select("#talk").on("submit", function() {
         d3.event.preventDefault() // prevent page refresh
         var textValue = d3.select("#talkbox").property("value");
         if (textValue != "") { // prevent empty value
+
           words.push(textValue); // add words to our list
           update(); // display the whole SVG to show new word
           d3.select("#talkbox").property("value", "") // clean box
