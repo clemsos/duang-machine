@@ -80,17 +80,21 @@
       }
 
       var color = "green";
-
       // a color selector
       var colorPicker = d3.select("#colorPicker")
         .append("svg")
 
-      var colorPickerCircle = colorPicker
+      var colors = ["green","red", "blue", "steelblue", "lime", "olive", "yellow"];
+
+      colorPicker
+        .selectAll("circle")
+        .data(colors)
+        .enter()
         .append("circle")
         .attr("r", 10)
-        .attr("cx", 20)
+        .attr("cx", function(d,i) { return 20+i*25 })
         .attr("cy", 20)
-        .attr("fill", color)
+        .attr("fill", function(d) { return d })
         .on("click", function(d, i){
           var c = d3.select(this).attr("fill")
           console.log(c);
