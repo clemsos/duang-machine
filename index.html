@@ -91,9 +91,14 @@
           d3.select("#talkbox").property("value", "") // clean box
 
           // log chat
+          var convertDate  = d3.time.format("%B %d - %H:%M");
+          var now = new Date;
+          var date = convertDate(now);
+          console.log(date);
+
           d3.select("#chat")
             .append("li")
-            .text(new Date + ":" +textValue)
+            .text( date + ":" +textValue)
 
         }
       });
