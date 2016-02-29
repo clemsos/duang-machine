@@ -2,6 +2,8 @@
 
 **Meme Machine** is an introduction workshop to writing apps in Javascript.
 
+A tribute to Digital Folklore - [I Can Has History](http://nm.merz-akademie.de/~helene.dams/icanhashistory/)
+
 ## Duang
 
 > **Duang** (Mandarin pronunciation: [twáŋ]; pinyin: duāng; Zhuyin Fuhao: ㄉㄨㄤ) is a Chinese neologism that has become a viral meme despite its meaning being unclear. It has become a popular hashtag on Sina Weibo with more than 8 million mentions by the start of March 2015.
@@ -14,7 +16,7 @@ Source : [bilibili.com](http://www.bilibili.com/video/av2023391/)
 
 ## Objectives
 
-Spam your friends with GIF
+Spam your friends with animated GIF.
 
 
 ## Components
