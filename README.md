@@ -14,10 +14,13 @@ A tribute to Digital Folklore - [I Can Has History](http://nm.merz-akademie.de/~
 
 From [Wikipdeia ](https://en.wikipedia.org/wiki/Duang)
 
-### Danmu [视频弹幕](https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95)
+### Danmu "bullet screen" - [视频弹幕](https://zh.wikipedia.org/wiki/%E8%A7%86%E9%A2%91%E5%BC%B9%E5%B9%95)
+
 
 ![Duang](DuangMachine.png)
 Source : [bilibili.com](http://www.bilibili.com/video/av2023391/)
+
+Danmu is so popular in China that it has already [enter cinema](http://technode.com/2014/08/07/others-theater-can-see-comments-screen-real-time/).
 
 ## Learning Objectives
 
