@@ -42,7 +42,11 @@
         </div>
         <div class="small six columns">
 
-          <div id="colorPicker"></div>
+          <div id="colorPicker">
+            <p>Pick a color : 
+              <svg></svg>
+            </p
+          </div>
 
           <form action="" id="talk">
             <input type="text" name="talk" id="talkbox">
@@ -85,11 +89,9 @@
 
       }
 
-
-
       // a color selector
-      var colorPicker = d3.select("#colorPicker")
-        .append("svg")
+      var colorPicker = d3.select("#colorPicker svg")
+        .attr("height", 30)
 
       var colors = ["green","red", "blue", "steelblue", "lime", "olive", "yellow"];
 
@@ -117,6 +119,7 @@
       d3.select("#talk").on("submit", function() {
         d3.event.preventDefault() // prevent page refresh
         var textValue = d3.select("#talkbox").property("value");
+
         if (textValue != "") { // prevent empty value
 
           words.push(textValue); // add words to our list
