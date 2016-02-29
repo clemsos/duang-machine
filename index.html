@@ -1,7 +1,8 @@
 <html>
   <head>
     <title>The Infernal Meme Machine</title>
-
+    <link rel="stylesheet" href="/css/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/skeleton.css" media="screen" title="no title" charset="utf-8">
     <style>
       .main {
         width: 100%;
@@ -27,24 +28,26 @@
         border: 1px solid #CCC;
       }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js" charset="utf-8"></script>
+    <script src="js/d3.v3.js" charset="utf-8"></script>
   </head>
   <body>
 
-    <div class="main">
+    <div class="main container">
       <h1>The Infernal Meme Machine</h1>
-      <div class="big">
-        <img class="gif-target" src="" alt="">
-        <div id="words"></div>
-      </div>
-      <div class="small">
-        <form action="" id="talk">
-          <input type="text" name="talk" id="talkbox">
-          <input type="submit" value="Say it!" id="talk-btn">
-        </form>
-        <ul id="chat">
+      <div class="row">
+        <div class="big  six columns">
+          <img class="gif-target" src="" alt="">
+          <div id="words"></div>
+        </div>
+        <div class="small six columns">
+          <form action="" id="talk">
+            <input type="text" name="talk" id="talkbox">
+            <input type="submit" value="Say it!" id="talk-btn">
+          </form>
+          <ul id="chat">
 
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -93,8 +96,6 @@
             .text(new Date + ":" +textValue)
 
         }
-
-
       });
 
       // moving text
