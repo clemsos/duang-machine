@@ -41,13 +41,15 @@
           <div id="words"></div>
         </div>
         <div class="small six columns">
+
           <div id="colorPicker"></div>
+
           <form action="" id="talk">
             <input type="text" name="talk" id="talkbox">
             <input type="submit" value="Say it!" id="talk-btn">
           </form>
-          <ul id="chat">
 
+          <ul id="chat">
           </ul>
         </div>
       </div>
@@ -95,10 +97,12 @@
         .attr("cx", function(d,i) { return 20+i*25 })
         .attr("cy", 20)
         .attr("fill", function(d) { return d })
-        .on("click", function(d, i){
-          var c = d3.select(this).attr("fill")
-          console.log(c);
-        })
+        .on("click", function(d){
+          var c = d3.select(this).attr("fill"); // get color from click
+          console.log(c); // display color name in the console
+          color = c; // assign color to the app
+          d3.select("#talk-btn").style("background-color", c); // change button color
+        });
 
       // data
       var words = ["coucou","salut"];
@@ -123,6 +127,7 @@
 
           d3.select("#chat")
             .append("li")
+            .style("color", color)
             .text( date + ":" +textValue)
 
         }
